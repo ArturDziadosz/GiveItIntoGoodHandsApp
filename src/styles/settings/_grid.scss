@@ -3,7 +3,7 @@ $singleColWidth: 100%/($numOfColumns);
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: calc(1900px - 140px - 150px);
   margin: 0 auto;
 
   .row {

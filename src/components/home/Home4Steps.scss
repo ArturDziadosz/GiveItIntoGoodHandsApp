@@ -1,0 +1,106 @@
+@import "../../styles/settings/variables";
+
+.fourSteps {
+  margin: 55px 0 80px;
+  color: $colorText;
+
+  .container {
+    .row {
+      align-items: center;
+      flex-direction: column;
+
+      h2 {
+        font-size: 3.8em;
+        line-height: 1.45em;
+      }
+
+      .decoration {
+        background-image: url("../../assets/Decoration.svg");
+        width: 253px;
+        height: 33px;
+        margin: 25px 0 35px;
+      }
+    }
+  }
+}
+
+
+.fourStepsBoxes {
+  background-color: $colorBackground;
+  margin-bottom: 35px;
+  color: $colorText;
+
+  .row {
+
+    justify-content: center;
+    width: 100vw;
+    position: relative;
+    left: 0;
+
+    .col-2 {
+      margin: 73px 85px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 134px;
+
+      &:last-of-type {
+        max-width: 148px;
+      }
+
+      &:first-of-type div {
+        background-image: url("../../assets/Icon-1.svg");
+      }
+
+      &:nth-of-type(2) div {
+        background-image: url("../../assets/Icon-2.svg");
+      }
+
+      &:nth-of-type(3) div {
+        background-image: url("../../assets/Icon-3.svg");
+      }
+
+      &:last-of-type div {
+        background-image: url("../../assets/Icon-4.svg");
+      }
+
+      div {
+        width: 83px;
+        height: 83px;
+      }
+
+      p {
+        &:first-of-type {
+          font-size: 1.8em;
+          line-height: 1.33em;
+          margin: 8px 0 17px;
+          position: relative;
+
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 50%;
+            border-top: 1px solid $colorText;
+            left: 25%;
+            bottom: -10px;
+          }
+        }
+
+        &:last-of-type {
+          font-size: 1.6em;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.fourStepsCTA {
+  .container {
+    .row {
+      justify-content: center;
+    }
+  }
+}
