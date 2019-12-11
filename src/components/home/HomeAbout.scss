@@ -1,0 +1,50 @@
+@import "../../styles/settings/variables";
+
+.about {
+  background-color: $colorBackground;
+  margin: 80px 0 70px;
+  .container {
+    max-width: 1900px;
+    .aboutBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 185px 150px;
+      color: $colorText;
+
+      .aboutTitle {
+        font-size: 3.8em;
+        line-height: 1.45em;
+
+      }
+
+      .decoration {
+        background-image: url("../../assets/Decoration.svg");
+        min-width: 253px;
+        min-height: 33px;
+        margin: 25px 0 35px;
+      }
+
+      .aboutText {
+        font-size: 3em;
+        line-height: 1.8em;
+        text-align: center;
+      }
+
+      .aboutSign {
+        min-width: 210px;
+        min-height: 150px;
+        background-image: url("../../assets/Signature.svg");
+        align-self: flex-end;
+      }
+    }
+
+    .aboutImg {
+      background-image: url("../../assets/People.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}

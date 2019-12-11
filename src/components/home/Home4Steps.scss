@@ -16,8 +16,8 @@
 
       .decoration {
         background-image: url("../../assets/Decoration.svg");
-        width: 253px;
-        height: 33px;
+        min-width: 253px;
+        min-height: 33px;
         margin: 25px 0 35px;
       }
     }
@@ -66,8 +66,8 @@
       }
 
       div {
-        width: 83px;
-        height: 83px;
+        min-width: 83px;
+        min-height: 83px;
       }
 
       p {
