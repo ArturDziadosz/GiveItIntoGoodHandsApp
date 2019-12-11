@@ -4,6 +4,7 @@ import {HomeHeader} from "./home/HomeHeader";
 import {HomeTreeColumns} from "./home/HomeTreeColumns";
 import {Home4Steps} from "./home/Home4Steps";
 import {HomeAbout} from "./home/HomeAbout";
+import {HomeWhoWeHelp} from "./home/HomeWhoWeHelp";
 
 import './Home.scss';
 
@@ -20,6 +21,7 @@ class Home extends Component {
           <HomeTreeColumns/>
           <Home4Steps />
           <HomeAbout />
+          <HomeWhoWeHelp />
       </>
     );
   }

@@ -1,0 +1,175 @@
+@import '../../styles/settings/variables';
+
+.whoWeHelp {
+  color: $colorText;
+  margin-bottom: 80px;
+
+  .container {
+    max-width: 1344px;
+
+    .rowTitle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .title {
+        font-size: 3.8em;
+        line-height: 1.45em;
+
+      }
+
+      .decoration {
+        background-image: url("../../assets/Decoration.svg");
+        min-width: 253px;
+        min-height: 33px;
+        margin: 25px 0 50px;
+      }
+
+      .col-16 {
+        display: flex;
+        justify-content: center;
+
+        div {
+          width: 220px;
+          max-height: 85px;
+          border: .75px solid $colorText;
+          font-size: 2.4em;
+          line-height: 1.2em;
+          padding: 23px 42px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          cursor: pointer;
+          position: relative;
+          z-index: 1;
+
+          &:nth-of-type(2) {
+            margin: 0 53px;
+            width: 260px;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $colorText;
+            height: 0;
+            width: 100%;
+            transition: height .5s;
+            z-index: -1;
+          }
+
+          &:hover {
+            color: #fff;
+            transition: all .2s;
+
+            &::after {
+              height: 100%;
+              transition: height .5s;
+            }
+          }
+
+        }
+
+        .active {
+          color: #fff;
+          background-color: $colorText;
+        }
+      }
+    }
+
+    .rowExplanation {
+      font-size: 2.2em;
+      line-height: 1.36em;
+      width: 50%;
+      margin: 70px auto 30px;
+      text-align: center;
+    }
+
+    .rowList {
+      flex-direction: column;
+      font-family: $font-alt;
+      font-weight: 300;
+
+      .entity {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #707070;
+        margin-top: 35px;
+
+        p:first-of-type {
+          font-size: 2.6em;
+          line-height: 1.2em;
+        }
+
+        p:last-of-type {
+          font-size: 1.8em;
+          line-height: 1.22em;
+          font-style: italic;
+          margin-bottom: 30px;
+        }
+
+        div:last-of-type {
+          font-size: 1.8em;
+          line-height: 2em;
+        }
+
+        &:last-of-type {
+          border-bottom: none;
+
+        }
+      }
+    }
+
+    .rowPagination {
+      justify-content: center;
+
+      p {
+        display: block;
+        margin-top: 33px;
+        width: 40px;
+        height: 50px;
+        padding: 15px;
+        font-size: 1.8em;;
+        line-height: 1.22em;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+
+        &:nth-of-type(2) {
+          margin: 33px 22px 0;
+        }
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: $colorText;
+          height: 0;
+          width: 100%;
+          transition: height .5s;
+          z-index: -1;
+        }
+        &:hover {
+          color: #fff;
+          transition: all .2s;
+
+          &::after {
+            height: 100%;
+            transition: height .5s;
+          }
+        }
+      }
+      .active {
+        background-color: $colorText;
+        color: #fff;
+      }
+    }
+  }
+}
