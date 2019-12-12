@@ -5,6 +5,7 @@ import {HomeTreeColumns} from "./home/HomeTreeColumns";
 import {Home4Steps} from "./home/Home4Steps";
 import {HomeAbout} from "./home/HomeAbout";
 import {HomeWhoWeHelp} from "./home/HomeWhoWeHelp";
+import {HomeContact} from "./home/HomeContact";
 
 import './Home.scss';
 
@@ -22,6 +23,7 @@ class Home extends Component {
           <Home4Steps />
           <HomeAbout />
           <HomeWhoWeHelp />
+          <HomeContact />
       </>
     );
   }

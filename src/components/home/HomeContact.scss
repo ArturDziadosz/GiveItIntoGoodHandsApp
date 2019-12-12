@@ -1,0 +1,157 @@
+@import '../../styles/settings/variables';
+
+.contact {
+  background-color: lighten($colorBackground, 4%);
+
+  .container {
+    max-width: 1900px;
+    background-image: url("../../assets/Background-Contact-Form.jpg");
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0%, 100%, 0.79);
+    }
+
+    .row {
+      padding-right: 142px;
+    }
+
+    .rowContact {
+      justify-content: flex-end;
+
+      form {
+        color: $colorText;
+        display: flex;
+        flex-direction: column;;
+        justify-content: center;
+        align-items: center;
+        margin: 200px 0 270px;
+        z-index: 1;
+
+        h2 {
+          font-size: 3.8em;
+          line-height: 1.45em;
+        }
+
+        .decoration {
+          background-image: url("../../assets/Decoration.svg");
+          width: 253px;
+          height: 33px;
+          margin: 25px 0 35px;
+        }
+
+        .inputs {
+          display: flex;
+
+          .input {
+            margin-left: 16px;
+
+            label {
+              font-weight: 600;
+              font-size: 1.6em;
+              line-height: 1.33em;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              min-width: 256px;
+              min-height: 62px;
+
+              input {
+                border: none;
+                border-bottom: 1px solid $colorText;
+                color: $colorText;
+                font-size: 1em;
+                line-height: 1.33em;
+
+                &::placeholder {
+                  opacity: .26;
+                }
+              }
+            }
+          }
+        }
+
+        .text {
+          margin: 40px 0 40px 12px;
+          align-self: flex-start;
+          width: 98%;
+
+          label {
+            font-weight: 600;
+            font-size: 1.6em;
+            line-height: 1.33em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 135px;
+
+            textarea {
+              border: none;
+              border-bottom: 1px solid $colorText;
+              color: $colorText;
+              font-size: 1em;
+              line-height: 1.33em;
+              min-height: 110px;
+
+              &::placeholder {
+                opacity: .26;
+              }
+            }
+          }
+        }
+
+        button {
+          color: #000;
+          font-size: 1.8em;
+          font-weight: 300;
+          font-family: $font-base;
+          background-color: #fff;
+          padding: 13px 53px;
+          border: .75px solid $colorText;
+          align-self: flex-end;
+          @include hoverBtn;
+        }
+      }
+    }
+
+    footer {
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 22px;
+      position: relative;
+
+      p {
+        font-size: 1.8em;
+        line-height: 1.33em;
+      }
+
+      .icons {
+        position: absolute;
+        right: 142px;
+        top: 0;
+        display: flex;
+
+        a {
+          display: block;
+          height: 30px;
+          width: 30px;
+          background-image: url("../../assets/Facebook.svg");
+          background-position: center;
+          background-size: cover;
+
+          &:last-of-type {
+            position: relative;
+            top: 1px;
+            margin-left: 20px;
+            background-image: url("../../assets/Instagram.svg");
+          }
+        }
+      }
+    }
+  }
+}
