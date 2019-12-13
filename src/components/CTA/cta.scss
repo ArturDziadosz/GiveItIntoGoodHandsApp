@@ -1,12 +1,12 @@
 @import "../../styles/settings/variables";
 
 .give {
+  text-align: center;
   font-weight: 300;
   font-size: 3.6em;
   line-height: 1.25em;
-  padding: 13px 93px;
+  padding: 13px 94px;
   color: $colorText;
   border: .75px solid $colorText;
-  background-color: #fff;
   @include hoverBtn;
 }

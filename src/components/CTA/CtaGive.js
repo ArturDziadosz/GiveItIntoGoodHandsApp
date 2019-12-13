@@ -5,9 +5,9 @@ import './cta.scss';
 class CtaGive extends Component {
   render() {
     return (
-      <button className={"give"}>
+      <div className={"give"}>
         ODDAJ<br />RZECZY
-      </button>
+      </div>
     )
   }
 }

@@ -1,0 +1,58 @@
+@import '../../styles/settings/variables';
+
+header {
+  .container {
+    display: flex;
+    max-width: 1900px;
+    justify-content: flex-end;
+
+    .heroBanner {
+      background-image: url("../../assets/Home-Hero-Image.jpg");
+      background-position: right bottom;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 48%;
+      min-height: 970px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+
+    .heroBox {
+      display: flex;
+      flex-direction: column;
+      padding-right: 142px;
+
+      .rowNav {
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .rowBanner {
+        color: $colorText;
+        max-width: 702px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 210px 134px 272px 0;
+
+
+        h1 {
+          text-align: center;
+          font-size: 3.8em;
+          line-height: 1.45em;
+        }
+
+        .decoration {
+          @include decoration;
+          margin-bottom: 65px;
+        }
+
+        .cta {
+          display: flex;
+        }
+      }
+    }
+  }
+}

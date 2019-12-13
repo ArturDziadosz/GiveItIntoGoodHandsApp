@@ -39,10 +39,8 @@
         }
 
         .decoration {
-          background-image: url("../../assets/Decoration.svg");
-          width: 253px;
-          height: 33px;
-          margin: 25px 0 35px;
+          @include decoration;
+          margin-bottom: 70px;
         }
 
         .inputs {

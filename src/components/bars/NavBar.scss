@@ -1,0 +1,26 @@
+@import '../../styles/settings/variables';
+
+.navBar {
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    color: $colorText;
+    font-size: 1.8em;
+    line-height: 1.33em;
+
+    li {
+      display: block;
+      padding: 10px 20px;
+      margin-right: 15px;
+      @include hoverBtn;
+
+      &:first-of-type {
+        box-shadow: -1px -1px $colorText inset, 1px 2px $colorText inset;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

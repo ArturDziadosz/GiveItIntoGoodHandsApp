@@ -15,10 +15,7 @@
       }
 
       .decoration {
-        background-image: url("../../assets/Decoration.svg");
-        min-width: 253px;
-        min-height: 33px;
-        margin: 25px 0 35px;
+        @include decoration;
       }
     }
   }

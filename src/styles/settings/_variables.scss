@@ -39,6 +39,7 @@ $lineHeight: 1.8em;
     &::after {
       height: 100%;
       transition: height .5s;
+
     }
   }
 
@@ -46,6 +47,13 @@ $lineHeight: 1.8em;
     top: 2px;
     transition: all .1s;
   }
+}
+
+@mixin decoration {
+  background-image: url("../../assets/Decoration.svg");
+  min-width: 253px;
+  min-height: 33px;
+  margin: 25px 0 35px;
 }
 
 

@@ -3,8 +3,10 @@
 .about {
   background-color: $colorBackground;
   margin: 80px 0 70px;
+
   .container {
     max-width: 1900px;
+
     .aboutBox {
       display: flex;
       flex-direction: column;
@@ -20,10 +22,8 @@
       }
 
       .decoration {
-        background-image: url("../../assets/Decoration.svg");
-        min-width: 253px;
-        min-height: 33px;
-        margin: 25px 0 55px;
+        @include decoration;
+        margin-bottom: 55px;
       }
 
       .aboutText {
