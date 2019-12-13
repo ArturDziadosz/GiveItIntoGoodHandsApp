@@ -9,13 +9,15 @@ import './HomeHeader.scss';
 class HomeHeader extends Component {
   render() {
     return (
-      <header>
+      <header name={"header"}>
         <section className={"container"}>
           <div className="heroBanner"/>
           <div className="heroBox">
             <div className={"row rowNav"}>
-              <LogInBar/>
-              <NavBar/>
+              <div className="fixedContainer">
+                <LogInBar/>
+                <NavBar/>
+              </div>
             </div>
             <div className={"row rowBanner"}>
               <h1>Zacznij pomagać!<br/>Oddaj niechciane rzeczy w zaufane ręce</h1>

@@ -19,11 +19,11 @@ class Home extends Component {
     return (
       <>
           <HomeHeader/>
-          <HomeTreeColumns/>
-          <Home4Steps />
-          <HomeAbout />
-          <HomeWhoWeHelp />
-          <HomeContact />
+          <HomeTreeColumns />
+          <Home4Steps name={"fourSteps"}/>
+          <HomeAbout name={"about"}/>
+          <HomeWhoWeHelp name={"whoWeHelp"}/>
+          <HomeContact name={"contact"}/>
       </>
     );
   }
