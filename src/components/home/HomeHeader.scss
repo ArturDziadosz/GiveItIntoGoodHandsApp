@@ -45,6 +45,14 @@ header {
           flex-direction: column;
           align-items: flex-end;
         }
+
+        .fixedContainerSmall {
+          width: 1900px;
+          padding: 0 142px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+        }
       }
 
       .rowBanner {

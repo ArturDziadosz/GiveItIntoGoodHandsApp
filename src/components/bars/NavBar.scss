@@ -1,6 +1,6 @@
 @import '../../styles/settings/variables';
 
-.navBar {
+.navBarTopPosition {
   ul {
     display: flex;
     justify-content: flex-end;
@@ -19,4 +19,8 @@
       }
     }
   }
+}
+
+.navBar {
+  margin: 37px 0 17px;
 }

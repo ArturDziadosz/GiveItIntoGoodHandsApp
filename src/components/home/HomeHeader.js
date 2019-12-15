@@ -7,6 +7,31 @@ import {CtaOrganize} from "../CTA/CtaOrganize";
 import './HomeHeader.scss';
 
 class HomeHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      topPosition: true
+    }
+  }
+
+  componentDidMount() {
+    this.distanceToTop();
+  }
+
+  distanceToTop = () => {
+    window.addEventListener("scroll", ev => {
+      if (window.scrollY >= 150) {
+        this.setState({
+          topPosition: false
+        })
+      } else {
+        this.setState({
+          topPosition: true
+        })
+      }
+    })
+  };
+
   render() {
     return (
       <header name={"header"}>
@@ -14,9 +39,9 @@ class HomeHeader extends Component {
           <div className="heroBanner"/>
           <div className="heroBox">
             <div className={"row rowNav"}>
-              <div className="fixedContainer">
+              <div className={this.state.topPosition ? "fixedContainer" : "fixedContainerSmall"}>
                 <LogInBar/>
-                <NavBar/>
+                <NavBar topPosition={this.state.topPosition}/>
               </div>
             </div>
             <div className={"row rowBanner"}>
