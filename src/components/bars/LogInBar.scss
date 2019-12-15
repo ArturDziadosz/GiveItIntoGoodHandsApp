@@ -1,18 +1,19 @@
 @import '../../styles/settings/variables';
 
 .logInBar {
-  color: $colorText;
   font-size: 1.4em;
   display: flex;
   justify-content: flex-end;
   margin: 37px 0 17px;
 
   .logIn {
+    color: $colorText;
     padding: 10px;
     @include hoverBtn;
   }
 
   .signIn {
+    color: $colorText;
     padding: 10px;
     margin-left: 20px;
     border: .75px solid $colorBackgroundAlt;

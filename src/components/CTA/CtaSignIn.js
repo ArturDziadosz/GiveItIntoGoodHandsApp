@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 
 class CtaSignIn extends Component {
   render() {
     return (
-      <div className={"signIn"}>
-        Załóż konto
-      </div>
+      <Link to={"/rejestracja"}>
+        <div className={"signIn"}>
+          Załóż konto
+        </div>
+      </Link>
     )
   }
 }
