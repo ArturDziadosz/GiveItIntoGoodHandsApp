@@ -6,7 +6,7 @@ class CtaLogIn extends Component {
     return (
       <Link to={"/logowanie"}>
         <div className={"logIn"}>
-          Zaloguj
+          {this.props.text ? this.props.text :"Zaloguj"}
         </div>
       </Link>
     )

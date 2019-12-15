@@ -11,8 +11,12 @@ body {
   font-family: $font-base;
   line-height: $lineHeight;
   background-color: #fff;
+  &:focus {
+    outline-color: $colorBackgroundAlt;
+  }
 }
 
 a {
   text-decoration: none;
 }
+
