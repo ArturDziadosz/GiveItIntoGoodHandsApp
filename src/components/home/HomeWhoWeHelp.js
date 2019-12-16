@@ -1,9 +1,42 @@
 import React, {Component} from "react";
+import * as data from '../../db/foundations';
 
 import './HomeWhoWeHelp.scss';
 
 class HomeWhoWeHelp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      foundations: {
+        explanation: data.explanation,
+        list: data.list
+      },
+      currentPage: 1,
+      entityPerPage: 3
+    }
+  }
+
+  handleChangePage = (e, i) => {
+    this.setState({
+      currentPage: i
+    })
+  };
+
   render() {
+    const {foundations, currentPage, entityPerPage} = this.state;
+    const indexOfLast = currentPage * entityPerPage;
+    const indexOfFirst = indexOfLast - entityPerPage;
+    const currentFoundations = foundations.list.slice(indexOfFirst,indexOfLast);
+
+    const pageNumber = [];
+    for (let i = 1; i <= Math.ceil(foundations.list.length / entityPerPage); i++) {
+      const element = <li key={i} onClick={e => this.handleChangePage(e, i)} className={currentPage === i ? "active" : ""}>{i}</li>;
+      pageNumber.push(element);
+    }
+    if (pageNumber.length === 1) {
+      pageNumber.pop();
+    }
+
     return (
       <section className={"whoWeHelp"}>
         <div className="container">
@@ -16,34 +49,22 @@ class HomeWhoWeHelp extends Component {
               <div>Lokalnym<br/>zbiórkom</div>
             </div>
           </div>
-          <div className="row rowExplanation">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</div>
+          <div className="row rowExplanation">{foundations.explanation}</div>
           <ul className="row rowList">
-            <li className={"entity"}>
-              <div>
-                <p>Fundacja “Dbam o Zdrowie”</p>
-                <p>Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</p>
-              </div>
-              <div>ubrania, jedzenie, sprzęt AGD, meble, zabawki</div>
-            </li>
-            <li className={"entity"}>
-              <div>
-                <p>Fundacja “Dla dzieci”</p>
-                <p>Cel i misja: Pomoc dzieciom z ubogich rodzin.</p>
-              </div>
-              <div>ubrania, meble, zabawki</div>
-            </li>
-            <li className={"entity"}>
-              <div>
-                <p>Fundacja “Bez domu”</p>
-                <p>Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.</p>
-              </div>
-              <div>ubrania, jedzenie, ciepłe koce</div>
-            </li>
+            {currentFoundations.map(entity => {
+              return <li key={entity.id} className={"entity"}>
+                <div>
+                  <p>{entity.name}</p>
+                  <p>{entity.mission}</p>
+                </div>
+                <div>{entity.category}</div>
+              </li>
+            })}
           </ul>
-          <div className="row rowPagination">
-            <p className={"active"}>1</p>
-            <p>2</p>
-            <p>3</p>
+          <div className="row">
+            <ul className={"Pagination"}>
+              {pageNumber}
+            </ul>
           </div>
         </div>
       </section>

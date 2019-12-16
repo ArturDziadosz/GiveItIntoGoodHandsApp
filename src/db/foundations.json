@@ -1,0 +1,59 @@
+{
+  "explanation": "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.",
+  "list": [
+    {
+      "id": 1,
+      "name": "Fundacja “Dbam o Zdrowie”",
+      "mission": "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
+      "category": "ubrania, jedzenie, sprzęt AGD, meble, zabawki"
+    },
+    {
+      "id":  2,
+      "name": "Fundacja “Dla dzieci”",
+      "mission": "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
+      "category": "ubrania, meble, zabawki"
+    },
+    {
+      "id":  3,
+      "name": "Fundacja “Bez domu”",
+      "mission": "Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.",
+      "category": "ubrania, jedzenie, ciepłe koce"
+    },
+    {
+      "id":  4,
+      "name": "Fundacja ”Lorem Ipsum 4”",
+      "mission": "Lorem ipsum dolor sit amet.",
+      "category": "excepteur, sint, occaecat, cupidatat, non, proident"
+    },
+    {
+      "id":  5,
+      "name": "Fundacja ”Lorem Ipsum 5”",
+      "mission": "Onsectetur adipiscing elit.",
+      "category": "sunt, in, culpa, qui, officia, deserunt"
+    },
+    {
+      "id":  6,
+      "name": "Fundacja ”Lorem Ipsum 6”",
+      "mission": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "category": "mollit, anim, id, est, laborum"
+    },
+    {
+      "id":  7,
+      "name": "Fundacja ”Lorem Ipsum 7”",
+      "mission": "Ut enim ad minim veniam.",
+      "category": "sed, ut, perspiciatis"
+    },
+    {
+      "id":  8,
+      "name": "Fundacja ”Lorem Ipsum 8”",
+      "mission": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "category": "unde, omnis, iste, natus"
+    },
+    {
+      "id":  9,
+      "name": "Fundacja ”Lorem Ipsum 9”",
+      "mission": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "category": "error, sit, voluptatem, accusantium"
+    }
+  ]
+}
