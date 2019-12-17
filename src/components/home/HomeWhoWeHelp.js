@@ -1,5 +1,7 @@
 import React, {Component} from "react";
-import * as data from '../../db/foundations';
+import * as dataF from '../../db/foundations';
+import * as dataO from '../../db/organizations';
+import * as dataL from '../../db/localsGathering';
 
 import './HomeWhoWeHelp.scss';
 
@@ -7,12 +9,10 @@ class HomeWhoWeHelp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      foundations: {
-        explanation: data.explanation,
-        list: data.list
-      },
+      data: [dataF,dataO,dataL],
       currentPage: 1,
-      entityPerPage: 3
+      entityPerPage: 3,
+      currentOrganization: 0
     }
   }
 
@@ -22,53 +22,65 @@ class HomeWhoWeHelp extends Component {
     })
   };
 
+  handleChangeOrganization = (e, i) => {
+    this.setState({
+      currentOrganization: i
+    })
+  };
+
   render() {
-    const {foundations, currentPage, entityPerPage} = this.state;
+    const {data, currentPage, entityPerPage, currentOrganization} = this.state;
     const indexOfLast = currentPage * entityPerPage;
     const indexOfFirst = indexOfLast - entityPerPage;
-    const currentFoundations = foundations.list.slice(indexOfFirst,indexOfLast);
+    const viewedOrganization = data[currentOrganization].default.list.slice(indexOfFirst, indexOfLast);
 
     const pageNumber = [];
-    for (let i = 1; i <= Math.ceil(foundations.list.length / entityPerPage); i++) {
-      const element = <li key={i} onClick={e => this.handleChangePage(e, i)} className={currentPage === i ? "active" : ""}>{i}</li>;
+    for (let i = 1; i <= Math.ceil(data[currentOrganization].default.list.length / entityPerPage); i++) {
+      const element = <li key={i} onClick={e => this.handleChangePage(e, i)}
+                          className={currentPage === i ? "active" : ""}>{i}</li>;
       pageNumber.push(element);
     }
     if (pageNumber.length === 1) {
       pageNumber.pop();
     }
 
-    return (
-      <section className={"whoWeHelp"}>
-        <div className="container">
-          <div className="row rowTitle">
-            <h2 className="title">Komu pomagamy?</h2>
-            <div className={"decoration"}/>
-            <div className="col-16">
-              <div className={"active"}>Fundacjom</div>
-              <div>Organizacjom<br/>pozarządowym</div>
-              <div>Lokalnym<br/>zbiórkom</div>
+    const organizationNumber = [];
+    const organizationNames = ["Fundacjom", "Organizacjom pozarządowym", "Lokalnym zbiórkom"];
+    for (let i = 0; i <= 2; i++) {
+      const element = <div key={i} onClick={e=> this.handleChangeOrganization(e,i)} className={currentOrganization === i ? "active" : ""}>{organizationNames[i]}</div>;
+      organizationNumber.push(element);
+    }
+
+      return (
+        <section className={"whoWeHelp"}>
+          <div className="container">
+            <div className="row rowTitle">
+              <h2 className="title">Komu pomagamy?</h2>
+              <div className={"decoration"}/>
+              <div className="col-16">
+                {organizationNumber}
+              </div>
+            </div>
+            <div className="row rowExplanation">{data[currentOrganization].default.explanation}</div>
+            <ul className="row rowList">
+              {viewedOrganization.map(entity => {
+                return <li key={entity.id} className={"entity"}>
+                  <div>
+                    <p>{entity.name}</p>
+                    <p>{entity.mission}</p>
+                  </div>
+                  <div>{entity.category}</div>
+                </li>
+              })}
+            </ul>
+            <div className="row">
+              <ul className={"Pagination"}>
+                {pageNumber}
+              </ul>
             </div>
           </div>
-          <div className="row rowExplanation">{foundations.explanation}</div>
-          <ul className="row rowList">
-            {currentFoundations.map(entity => {
-              return <li key={entity.id} className={"entity"}>
-                <div>
-                  <p>{entity.name}</p>
-                  <p>{entity.mission}</p>
-                </div>
-                <div>{entity.category}</div>
-              </li>
-            })}
-          </ul>
-          <div className="row">
-            <ul className={"Pagination"}>
-              {pageNumber}
-            </ul>
-          </div>
-        </div>
-      </section>
-    );
+        </section>
+      );
   }
 }
 

@@ -17,7 +17,7 @@ class Error404 extends Component {
             </div>
           </div>
           <div className="logInBox">
-            <h1 className="title">Opps! Page Not Found - Error 404</h1>
+            <h1 className="title">Oops! Page Not Found - Error 404</h1>
             <div className="decoration"/>
             <CtaMainPage/>
           </div>

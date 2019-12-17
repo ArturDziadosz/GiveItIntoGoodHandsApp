@@ -1,0 +1,23 @@
+{
+  "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+  "list": [
+    {
+      "id": 1,
+      "name": "Zbiórka “Lorem Ipsum 1”",
+      "mission": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+      "category": "Egestas, sed, tempus"
+    },
+    {
+      "id": 2,
+      "name": "Zbiórka “Lorem Ipsum 2”",
+      "mission": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+      "category": "Mi, quis, hendrerit, dolor"
+    },
+    {
+      "id": 3,
+      "name": "Zbiórka “Lorem Ipsum 3”",
+      "mission": "Scelerisque in dictum non consectetur a erat nam.",
+      "category": "Ut, aliquam, purus, sit, amet"
+    }
+  ]
+}
