@@ -7,7 +7,7 @@ class Home4Steps extends Component {
   render() {
     return (
       <>
-        <section className={"fourSteps"}>
+        <section className={"fourSteps"} id={"fourSteps"}>
           <div className={"container"}>
             <div className={"row"}>
               <h2>Wystarczą 4 proste kroki</h2>

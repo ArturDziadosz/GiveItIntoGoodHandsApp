@@ -5,7 +5,7 @@ import {CtaMainPage} from "../CTA/CtaMainPage";
 
 import './Login.scss';
 
-class Logout extends Component {
+class Error404 extends Component {
   render() {
     return (
       <>
@@ -17,7 +17,7 @@ class Logout extends Component {
             </div>
           </div>
           <div className="logInBox">
-            <h1 className="title">Wylogowanie nastąpiło pomyślnie!</h1>
+            <h1 className="title">Opps! Page Not Found - Error 404</h1>
             <div className="decoration"/>
             <CtaMainPage/>
           </div>
@@ -27,4 +27,4 @@ class Logout extends Component {
   }
 }
 
-export {Logout};
+export {Error404};

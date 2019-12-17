@@ -1,7 +1,21 @@
 @import '../../styles/settings/variables';
 
-.container {
-  padding: 0 50px ;
+section.containerAlt {
+  max-width: 100vw;
+  .rowNavAlt {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $colorTextFaded;
+    .fixedContainer {
+      width: 1900px;
+      padding-right: 142px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      transition: all 500ms;
+    }
+  }
+
   .logInBox {
     display: flex;
     flex-direction: column;
@@ -72,10 +86,13 @@
           background-color: #fff;
           padding: 13px 15px;
           border: .75px solid $colorText;
-          font-weight: 300;
           font-size: 1.8em;
           line-height: 1.78em;
+          font-weight: 300;
           @include hoverBtn;
+          span {
+            font-weight: lighter;
+          }
         }
       }
     }

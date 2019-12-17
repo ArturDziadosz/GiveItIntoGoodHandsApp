@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {LogInBar} from "../bars/LogInBar";
-import {NavBar} from "../bars/NavBar";
+import {NavBarAlt} from "../bars/NavBarAlt";
 import {CtaSignIn} from "../CTA/CtaSignIn";
 
 import './Login.scss';
@@ -9,14 +9,16 @@ class Login extends Component {
   render() {
     return (
       <>
-        <section className="container">
-          <div className="row rowNav">
-            <LogInBar/>
-            <NavBar/>
+        <section className="container containerAlt">
+          <div className="row rowNavAlt">
+            <div className="fixedContainer">
+              <LogInBar/>
+              <NavBarAlt/>
+            </div>
           </div>
           <div className="logInBox">
             <h1 className="title">Zaloguj się</h1>
-            <div className="decoration" />
+            <div className="decoration"/>
             <form>
               <div className="formBox">
                 <label>
@@ -29,8 +31,8 @@ class Login extends Component {
                 </label>
               </div>
               <div className="formSubmit">
-                <CtaSignIn />
-                <div className={"logInBtn"}>Zaloguj się</div>
+                <CtaSignIn/>
+                <button className={"logInBtn"}><span>Zaloguj się</span></button>
               </div>
             </form>
           </div>

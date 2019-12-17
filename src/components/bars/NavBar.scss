@@ -1,6 +1,7 @@
 @import '../../styles/settings/variables';
 
 .navBarTopPosition {
+  transition: all 500ms;
   ul {
     display: flex;
     justify-content: flex-end;
@@ -16,6 +17,13 @@
 
       &:last-of-type {
         margin-right: 0;
+      }
+      a {
+        color: $colorText;
+        &:hover {
+          color: #fff;
+        }
+
       }
     }
   }
