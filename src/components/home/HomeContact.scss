@@ -70,6 +70,14 @@
                   opacity: .26;
                 }
               }
+              p {
+                color: red;
+                font-size: .7em;
+                line-height: 2em;
+                margin-bottom: -22px;
+                margin-top: -16px;
+                opacity: .7;
+              }
             }
           }
         }
@@ -99,6 +107,14 @@
               &::placeholder {
                 opacity: .26;
               }
+            }
+            p {
+              color: red;
+              font-size: .7em;
+              line-height: 2em;
+              margin-bottom: -22px;
+              margin-top: -4px;
+              opacity: .7;
             }
           }
         }
