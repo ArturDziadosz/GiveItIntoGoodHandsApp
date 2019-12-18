@@ -12,7 +12,8 @@ class HomeWhoWeHelp extends Component {
       data: [dataF,dataO,dataL],
       currentPage: 1,
       entityPerPage: 3,
-      currentOrganization: 0
+      currentOrganization: 0,
+      organizationNames: ["Fundacjom", "Organizacjom pozarządowym", "Lokalnym zbiórkom"]
     }
   }
 
@@ -29,7 +30,7 @@ class HomeWhoWeHelp extends Component {
   };
 
   render() {
-    const {data, currentPage, entityPerPage, currentOrganization} = this.state;
+    const {data, currentPage, entityPerPage, currentOrganization, organizationNames} = this.state;
     const indexOfLast = currentPage * entityPerPage;
     const indexOfFirst = indexOfLast - entityPerPage;
     const viewedOrganization = data[currentOrganization].default.list.slice(indexOfFirst, indexOfLast);
@@ -45,14 +46,13 @@ class HomeWhoWeHelp extends Component {
     }
 
     const organizationNumber = [];
-    const organizationNames = ["Fundacjom", "Organizacjom pozarządowym", "Lokalnym zbiórkom"];
-    for (let i = 0; i <= 2; i++) {
+    for (let i = 0; i < organizationNames.length; i++) {
       const element = <div key={i} onClick={e=> this.handleChangeOrganization(e,i)} className={currentOrganization === i ? "active" : ""}>{organizationNames[i]}</div>;
       organizationNumber.push(element);
     }
 
       return (
-        <section className={"whoWeHelp"}>
+        <section className={"whoWeHelp"} id={"whoWeHelp"}>
           <div className="container">
             <div className="row rowTitle">
               <h2 className="title">Komu pomagamy?</h2>

@@ -5,7 +5,7 @@ import './HomeContact.scss';
 class HomeContact extends Component {
   render() {
     return (
-      <section className={"contact"}>
+      <section className={"contact"} id={"contact"}>
         <div className="container">
           <div className="row rowContact">
             <form>

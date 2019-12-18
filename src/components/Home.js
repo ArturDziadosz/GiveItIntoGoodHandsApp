@@ -14,7 +14,7 @@ class Home extends Component {
   render() {
     return (
       <>
-          <HomeHeader/>
+          <HomeHeader />
           <HomeTreeColumns />
           <Home4Steps name={"fourSteps"}/>
           <HomeAbout name={"about"}/>

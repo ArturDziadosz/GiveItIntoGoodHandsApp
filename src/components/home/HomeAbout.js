@@ -5,7 +5,7 @@ import './HomeAbout.scss';
 class HomeAbout extends Component {
   render() {
     return (
-      <section className={"about"}>
+      <section className={"about"} id={"about"}>
         <div className={"container"}>
           <div className={"row"}>
             <div className={"aboutBox col-8"}>

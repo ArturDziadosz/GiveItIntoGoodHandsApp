@@ -34,7 +34,7 @@ class HomeHeader extends Component {
 
   render() {
     return (
-      <header name={"header"}>
+      <header name={"header"} id={"start"}>
         <section className={"container"}>
           <div className="heroBanner"/>
           <div className="heroBox">
