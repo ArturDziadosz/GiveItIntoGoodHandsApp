@@ -59,6 +59,12 @@ section.containerAlt {
           &:first-of-type {
             margin-top: 0;
           }
+          p {
+            color: red;
+            font-size: .7em;
+            line-height: 2em;
+            margin-bottom: -22px;
+          }
         }
       }
 
@@ -88,11 +94,8 @@ section.containerAlt {
           border: .75px solid $colorText;
           font-size: 1.8em;
           line-height: 1.78em;
-          font-weight: 300;
+          flex: 0 0 auto;
           @include hoverBtn;
-          span {
-            font-weight: lighter;
-          }
         }
       }
     }
