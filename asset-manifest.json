@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/GIIGHApp/static/css/main.27fe1ed0.chunk.css",
+    "main.js": "/GIIGHApp/static/js/main.8f86c282.chunk.js",
+    "main.js.map": "/GIIGHApp/static/js/main.8f86c282.chunk.js.map",
+    "runtime-main.js": "/GIIGHApp/static/js/runtime-main.b7e0f52b.js",
+    "runtime-main.js.map": "/GIIGHApp/static/js/runtime-main.b7e0f52b.js.map",
+    "static/js/2.cccc937c.chunk.js": "/GIIGHApp/static/js/2.cccc937c.chunk.js",
+    "static/js/2.cccc937c.chunk.js.map": "/GIIGHApp/static/js/2.cccc937c.chunk.js.map",
+    "index.html": "/GIIGHApp/index.html",
+    "precache-manifest.b455ed30276b1348584f633ecdf6235f.js": "/GIIGHApp/precache-manifest.b455ed30276b1348584f633ecdf6235f.js",
+    "service-worker.js": "/GIIGHApp/service-worker.js",
+    "static/css/main.27fe1ed0.chunk.css.map": "/GIIGHApp/static/css/main.27fe1ed0.chunk.css.map",
+    "static/js/2.cccc937c.chunk.js.LICENSE": "/GIIGHApp/static/js/2.cccc937c.chunk.js.LICENSE",
+    "static/media/HomeTreeColumns.scss": "/GIIGHApp/static/media/3 Columns Background.7db36abd.png",
+    "static/media/HomeContact.scss": "/GIIGHApp/static/media/Instagram.703479fd.svg",
+    "static/media/HomeHeader.scss": "/GIIGHApp/static/media/Home-Hero-Image.e99903ed.jpg",
+    "static/media/Home4Steps.scss": "/GIIGHApp/static/media/Icon-4.436df0aa.svg",
+    "static/media/HomeAbout.scss": "/GIIGHApp/static/media/Signature.e54cfcfc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b7e0f52b.js",
+    "static/js/2.cccc937c.chunk.js",
+    "static/css/main.27fe1ed0.chunk.css",
+    "static/js/main.8f86c282.chunk.js"
+  ]
+}
