@@ -6,8 +6,7 @@ import {Login} from "./login/Login";
 import {Logout} from "./login/Logout";
 import {Register} from "./login/Register";
 import {Error404} from "./login/Error404";
-
-import './App.scss';
+import {Form} from "./form/Form";
 
 class App extends Component {
   render() {
@@ -17,7 +16,7 @@ class App extends Component {
           <>
             <Switch>
               <Route exact path={'/'} component={Home}/>
-              {/*<Route path={'/oddaj-rzeczy'} component={Form} />*/}
+              <Route path={'/oddaj-rzeczy'} component={Form} />
               <Route path={'/logowanie'} component={Login}/>
               <Route path={'/rejestracja'} component={Register}/>
               <Route path={'/wylogowano'} component={Logout}/>

@@ -7,8 +7,6 @@ import {HomeAbout} from "./home/HomeAbout";
 import {HomeWhoWeHelp} from "./home/HomeWhoWeHelp";
 import {HomeContact} from "./home/HomeContact";
 
-import './Home.scss';
-
 class Home extends Component {
 
   render() {

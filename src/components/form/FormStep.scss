@@ -1,0 +1,74 @@
+@import '../../styles/settings/variables';
+
+.formStep {
+  background-image: url("../../assets/Background-Form.jpg");
+  background-size: cover;
+
+  .rowForm {
+    flex-direction: column;
+    padding: 35px 0 50px;
+    align-items: flex-start;
+
+    p {
+      font-size: 2.4em;
+      line-height: 1.1em;
+      font-weight: 300;
+      color: $colorText;
+      margin-bottom: 70px;
+    }
+
+    h3 {
+      font-size: 3.6em;
+      line-height: 1.25em;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .stepOneLabel {
+      position: relative;
+      font-size: 2.4em;
+      font-weight: 300;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+      cursor: pointer;
+
+      &:hover {
+        .checkmark {
+          background-color: $colorBackgroundAlt;
+        }
+      }
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked {
+          ~ .checkmark {
+            background-color: $colorBackgroundAlt;
+          }
+        }
+      }
+
+      .checkmark {
+        width: 40px;
+        height: 40px;
+        border: .75px solid $colorText;
+        margin-right: 30px;
+      }
+    }
+
+    .forward {
+      font-size: 2.4em;
+      line-height: 1.33em;
+      font-weight: 300;
+      border: .75px solid $colorText;
+      padding: 23px 63px;
+      margin-top: 118px;
+    }
+  }
+}
