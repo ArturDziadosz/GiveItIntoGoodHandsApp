@@ -69,6 +69,8 @@
       border: .75px solid $colorText;
       padding: 23px 63px;
       margin-top: 118px;
+      @include hoverBtn;
     }
+
   }
 }

@@ -3,6 +3,7 @@ import {LogInBar} from "../bars/LogInBar";
 import {NavBarAlt} from "../bars/NavBarAlt";
 import {FormHeader} from "./FormHeader";
 import {FormStepOne} from "./FormStepOne";
+import {FormStepTwo} from "./FormStepTwo";
 import {HomeContact} from "../home/HomeContact";
 
 import './Form.scss';
@@ -12,7 +13,8 @@ class Form extends Component {
     super(props);
     this.state = {
       topPosition: true,
-      currentStep: 1
+      currentStep: 1,
+      chosenStepOne: ""
     }
   }
 
@@ -34,17 +36,42 @@ class Form extends Component {
     })
   };
 
+  changeCurrentStep = (newCurrentStep, chosenStepOne) => {
+    this.setState({
+      currentStep: newCurrentStep,
+      chosenStepOne
+    })
+  };
+
   render() {
+    const {topPosition, currentStep} = this.state;
+    let step = null;
+    switch (currentStep) {
+      case 1:
+        step = <FormStepOne currentStep={currentStep} handleParentCurrentStep={this.changeCurrentStep}/>;
+        break;
+      case 2:
+        step = <FormStepTwo currentStep={currentStep}/>;
+        break;
+      case 3:
+        step = <p>Krok 3/4</p>;
+        break;
+      case 4:
+        step = <p>Krok 4/4</p>;
+        break;
+      default:
+        step = <p>Oopsss! Something goes wrong :(</p>
+    }
     return (
       <>
         <header className={"headerForm"}>
           <section className="container">
             <div className="heroBanner"/>
             <div className="heroBox">
-              <div className={this.state.topPosition ? "row rowNav" : "row rowNav rowZIdx"}>
-                <div className={this.state.topPosition ? "fixedContainer" : "fixedContainerSmall"}>
+              <div className={topPosition ? "row rowNav" : "row rowNav rowZIdx"}>
+                <div className={topPosition ? "fixedContainer" : "fixedContainerSmall"}>
                   <LogInBar/>
-                  <NavBarAlt topPosition={this.state.topPosition}/>
+                  <NavBarAlt topPosition={topPosition}/>
                 </div>
               </div>
               <div className={"row rowBanner"}>
@@ -73,13 +100,8 @@ class Form extends Component {
             </div>
           </section>
         </header>
-        <FormHeader currentStep={this.state.currentStep}/>
-        <FormStepOne currentStep={this.state.currentStep}/>
-        {/*<FormStepTwo/>*/}
-        {/*<FormStepTree />*/}
-        {/*<FormStepFour />*/}
-        {/*<FormSumUp />*/}
-        {/*<FormThanks />*/}
+        <FormHeader currentStep={currentStep}/>
+        {step}
         <HomeContact/>
       </>
     );
