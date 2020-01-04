@@ -10,4 +10,4 @@ The project is a **website** with a simple form that will make it easier for use
 ## https://arturdziadosz.github.io/GiveItIntoGoodHandsApp/#/
 
 ## Tech stack:
-### ```React``` ```Node.js``` ```npm``` ```React-App``` ```Adobe xd``` ```Sass``` ```Fetch``` ```JS``` ```ES6+``` ```HTML5``` ```CSS3```
+### ```React``` ```Node.js``` ```npm``` ```React-App``` `React-Router` `React-Scroll` `React-router-hash-link`  `Adobe xd` ```Sass``` ```Fetch``` `RxJS` `JS` ```ES6+``` ```HTML5``` ```CSS3```

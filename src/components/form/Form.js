@@ -4,6 +4,7 @@ import {NavBarAlt} from "../bars/NavBarAlt";
 import {FormHeader} from "./FormHeader";
 import {FormStepOne} from "./FormStepOne";
 import {FormStepTwo} from "./FormStepTwo";
+import {FormStepThree} from "./FormStepThree";
 import {HomeContact} from "../home/HomeContact";
 
 import './Form.scss';
@@ -14,7 +15,8 @@ class Form extends Component {
     this.state = {
       topPosition: true,
       currentStep: 1,
-      chosenStepOne: ""
+      chosenStepOne: "",
+      chosenStepTwo: ""
     }
   }
 
@@ -36,10 +38,24 @@ class Form extends Component {
     })
   };
 
-  changeCurrentStep = (newCurrentStep, chosenStepOne) => {
+  changeCurrentStep = (newCurrentStep, chosenStep) => {
     this.setState({
       currentStep: newCurrentStep,
-      chosenStepOne
+    }, () => {
+      switch (this.state.currentStep) {
+        case 2:
+          this.setState({
+            chosenStepOne: chosenStep
+          });
+          break;
+        case 3:
+          this.setState({
+            chosenStepTwo: chosenStep
+          });
+          break;
+        default:
+          return false;
+      }
     })
   };
 
@@ -51,10 +67,10 @@ class Form extends Component {
         step = <FormStepOne currentStep={currentStep} handleParentCurrentStep={this.changeCurrentStep}/>;
         break;
       case 2:
-        step = <FormStepTwo currentStep={currentStep}/>;
+        step = <FormStepTwo currentStep={currentStep} handleParentCurrentStep={this.changeCurrentStep}/>;
         break;
       case 3:
-        step = <p>Krok 3/4</p>;
+        step = <FormStepThree currentStep={currentStep} handleParentCurrentStep={this.changeCurrentStep}/>;
         break;
       case 4:
         step = <p>Krok 4/4</p>;

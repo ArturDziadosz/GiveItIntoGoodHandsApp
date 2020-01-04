@@ -2,7 +2,10 @@
 
 .formStep {
   background-image: url("../../assets/Background-Form.jpg");
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e8e7e5;
 
   .rowForm {
     flex-direction: column;
@@ -31,7 +34,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 42px;
       cursor: pointer;
 
       &:hover {
@@ -62,6 +65,45 @@
       }
     }
 
+    .stepTwoLabel {
+      margin-top: 10px;
+      font-size: 2.4em;
+      line-height: 1.33em;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      margin-bottom: 350px;
+      select {
+        font-size: 1em;
+        font-weight: 300;
+        padding: 8px 140px 8px 18px;
+        margin-left: 25px;
+      }
+    }
+
+    .stepThreeLabel {
+      margin-top: -20px;
+
+      select {
+        font-size: 2.4em;
+        line-height: 1.33em;
+        font-weight: 300;
+        padding: 8px 140px 8px 18px;
+        margin-bottom: 70px;
+      }
+
+      span {
+        font-size: 2.4em;
+        line-height: 1.33em;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+
+    .btns {
+      display: flex;
+    }
     .forward {
       font-size: 2.4em;
       line-height: 1.33em;
@@ -71,6 +113,14 @@
       margin-top: 118px;
       @include hoverBtn;
     }
-
+    .backward {
+      font-size: 2.4em;
+      line-height: 1.33em;
+      font-weight: 300;
+      border: .75px solid $colorText;
+      padding: 23px 52px;
+      margin: 118px 50px 0 0;
+      @include hoverBtn;
+    }
   }
 }
