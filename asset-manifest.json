@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/GiveItIntoGoodHandsApp/static/css/main.f7f285f1.chunk.css",
-    "main.js": "/GiveItIntoGoodHandsApp/static/js/main.76d0838d.chunk.js",
-    "main.js.map": "/GiveItIntoGoodHandsApp/static/js/main.76d0838d.chunk.js.map",
+    "main.css": "/GiveItIntoGoodHandsApp/static/css/main.068ed551.chunk.css",
+    "main.js": "/GiveItIntoGoodHandsApp/static/js/main.e8d47b5c.chunk.js",
+    "main.js.map": "/GiveItIntoGoodHandsApp/static/js/main.e8d47b5c.chunk.js.map",
     "runtime-main.js": "/GiveItIntoGoodHandsApp/static/js/runtime-main.5e5357db.js",
     "runtime-main.js.map": "/GiveItIntoGoodHandsApp/static/js/runtime-main.5e5357db.js.map",
-    "static/js/2.cccc937c.chunk.js": "/GiveItIntoGoodHandsApp/static/js/2.cccc937c.chunk.js",
-    "static/js/2.cccc937c.chunk.js.map": "/GiveItIntoGoodHandsApp/static/js/2.cccc937c.chunk.js.map",
+    "static/js/2.f9129d48.chunk.js": "/GiveItIntoGoodHandsApp/static/js/2.f9129d48.chunk.js",
+    "static/js/2.f9129d48.chunk.js.map": "/GiveItIntoGoodHandsApp/static/js/2.f9129d48.chunk.js.map",
     "index.html": "/GiveItIntoGoodHandsApp/index.html",
-    "precache-manifest.4e2cbc2545e8a6d46c099ed31ba9039e.js": "/GiveItIntoGoodHandsApp/precache-manifest.4e2cbc2545e8a6d46c099ed31ba9039e.js",
+    "precache-manifest.ed313df00e51983084d1059f9f05b3fe.js": "/GiveItIntoGoodHandsApp/precache-manifest.ed313df00e51983084d1059f9f05b3fe.js",
     "service-worker.js": "/GiveItIntoGoodHandsApp/service-worker.js",
-    "static/css/main.f7f285f1.chunk.css.map": "/GiveItIntoGoodHandsApp/static/css/main.f7f285f1.chunk.css.map",
-    "static/js/2.cccc937c.chunk.js.LICENSE": "/GiveItIntoGoodHandsApp/static/js/2.cccc937c.chunk.js.LICENSE",
+    "static/css/main.068ed551.chunk.css.map": "/GiveItIntoGoodHandsApp/static/css/main.068ed551.chunk.css.map",
+    "static/js/2.f9129d48.chunk.js.LICENSE": "/GiveItIntoGoodHandsApp/static/js/2.f9129d48.chunk.js.LICENSE",
     "static/media/HomeTreeColumns.scss": "/GiveItIntoGoodHandsApp/static/media/3 Columns Background.7db36abd.png",
     "static/media/HomeContact.scss": "/GiveItIntoGoodHandsApp/static/media/Instagram.703479fd.svg",
     "static/media/FormStep.scss": "/GiveItIntoGoodHandsApp/static/media/Background-Form.aab5aa4c.jpg",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5e5357db.js",
-    "static/js/2.cccc937c.chunk.js",
-    "static/css/main.f7f285f1.chunk.css",
-    "static/js/main.76d0838d.chunk.js"
+    "static/js/2.f9129d48.chunk.js",
+    "static/css/main.068ed551.chunk.css",
+    "static/js/main.e8d47b5c.chunk.js"
   ]
 }
