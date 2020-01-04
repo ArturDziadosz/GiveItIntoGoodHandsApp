@@ -73,15 +73,27 @@
       display: flex;
       align-items: center;
       margin-bottom: 350px;
+
       select {
         font-size: 1em;
         font-weight: 300;
         padding: 8px 140px 8px 18px;
         margin-left: 25px;
+        border: .75px solid $colorText;
+        background-color: transparent;
       }
     }
 
-    .stepThreeLabel {
+    .stepThreeText {
+      font-size: 2.4em;
+      line-height: 1.33em;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .firstStepThreeLabel {
       margin-top: -20px;
 
       select {
@@ -89,7 +101,7 @@
         line-height: 1.33em;
         font-weight: 300;
         padding: 8px 140px 8px 18px;
-        margin-bottom: 70px;
+        margin-bottom: 50px;
       }
 
       span {
@@ -101,9 +113,60 @@
       }
     }
 
+    .checkmarkBox {
+      margin-bottom: 25px;
+      width: 50%;
+
+      .stepThreeLabel {
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+
+          &:checked {
+            ~ .checkmark {
+              background-color: $colorBackgroundAlt;
+            }
+          }
+        }
+
+        &:hover {
+          .checkmark {
+            background-color: lighten($colorBackgroundAlt,10%);
+          }
+        }
+
+        span {
+          display: inline-block;
+          font-size: 2.4em;
+          line-height: 1.33em;
+          font-weight: 300;
+          padding: 11px 25px;
+          border: .75px solid $colorText;
+          margin: 0 25px 25px 0;
+        }
+      }
+    }
+
+    .lastStepThreeLabel {
+      width: 50%;
+      input {
+        background-color: transparent;
+        border: .75px solid $colorText;
+        width: 80%;
+        font-size: 2.4em;
+        line-height: 1.33em;
+        font-weight: 300;
+        padding: 11px 25px;
+      }
+    }
+
     .btns {
       display: flex;
     }
+
     .forward {
       font-size: 2.4em;
       line-height: 1.33em;
@@ -113,6 +176,7 @@
       margin-top: 118px;
       @include hoverBtn;
     }
+
     .backward {
       font-size: 2.4em;
       line-height: 1.33em;

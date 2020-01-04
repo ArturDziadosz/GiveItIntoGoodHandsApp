@@ -10,7 +10,8 @@ class FormStepThree extends Component {
     this.state = {
       currentStep: this.props.currentStep,
       stepThreeLocalization: "",
-      stepThreeHelpGroups: []
+      stepThreeHelpGroups: [],
+      stepThreeEntity: ""
     }
   }
 
@@ -20,22 +21,38 @@ class FormStepThree extends Component {
     })
   };
 
-  changeCurrentStep = (newCurrentStep) => {
+  handleChangeCheckbox = e => {
+    let value = e.target.value;
+    if (this.state.stepThreeHelpGroups.includes(value)) {
+      let newArray = this.state.stepThreeHelpGroups;
+      newArray.splice(newArray.indexOf(value), 1);
+      this.setState({
+        stepThreeHelpGroups: newArray
+      })
+    } else {
+      this.setState(prevState => ({
+        stepThreeHelpGroups: [...prevState.stepThreeHelpGroups, value]
+      }))
+    }
+  };
+
+  changeCurrentStep = (newCurrentStep) =>
     this.setState({
       currentStep: newCurrentStep
     }, () => {
-      this.props.handleParentCurrentStep(this.state.currentStep, this.state.stepThree);
+      const stepThree = [this.state.stepThreeLocalization, this.state.stepThreeHelpGroups, this.state.stepThreeEntity.trim()];
+      this.props.handleParentCurrentStep(this.state.currentStep, stepThree);
     });
-  };
 
   render() {
+    const {stepThreeLocalization, currentStep, stepThreeEntity, stepThreeHelpGroups} = this.state;
     return (
       <div className="formStep">
         <section className="container containerForm">
           <div className="row rowForm">
-            <FormStepCounter currentStep={this.state.currentStep}/>
+            <FormStepCounter currentStep={currentStep}/>
             <h3>Lokalizacja:</h3>
-            <label className={"stepThreeLabel"}>
+            <label className={"firstStepThreeLabel"}>
               <select name={"stepThreeLocalization"} onChange={this.handleChange}>
                 <option selected={true} value={"— wybierz —"} disabled>— wybierz —</option>
                 <option value="Poznań">Poznań</option>
@@ -45,14 +62,42 @@ class FormStepThree extends Component {
                 <option value="Katowice">Katowice</option>
               </select>
             </label>
-            <label className={"stepThreeLabel"}>
-              <span>Komu chcesz pomóc?</span>
-              <input type={"checkbox"} name={"stepThreeHelpGroups"} value={"dzieciom"} onChange={this.handleChange}/>
+            <p className={"stepThreeText"}>Komu chcesz pomóc?</p>
+            <div className="checkmarkBox">
+              <label className={"stepThreeLabel"}>
+                <input type={"checkbox"} name={"stepThreeHelpGroups"} value={"dzieciom"}
+                       onChange={this.handleChangeCheckbox}/>
+                <span className={"checkmark"}>dzieciom</span>
+              </label>
+              <label className={"stepThreeLabel"}>
+                <input type={"checkbox"} name={"stepThreeHelpGroups"} value={"samotnym matkom"}
+                       onChange={this.handleChangeCheckbox}/>
+                <span className={"checkmark"}>samotnym matkom</span>
+              </label>
+              <label className={"stepThreeLabel"}>
+                <input type={"checkbox"} name={"stepThreeHelpGroups"} value={"bezdomnym"}
+                       onChange={this.handleChangeCheckbox}/>
+                <span className={"checkmark"}>bezdomnym</span>
+              </label>
+              <label className={"stepThreeLabel"}>
+                <input type={"checkbox"} name={"stepThreeHelpGroups"} value={"niepełnosprawnym"}
+                       onChange={this.handleChangeCheckbox}/>
+                <span className={"checkmark"}>niepełnosprawnym</span>
+              </label>
+              <label className={"stepThreeLabel"}>
+                <input type={"checkbox"} name={"stepThreeHelpGroups"} value={"osobom starszym"}
+                       onChange={this.handleChangeCheckbox}/>
+                <span className={"checkmark"}>osobom starszym</span>
+              </label>
+            </div>
+            <p className={"stepThreeText"}>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
+            <label className={"lastStepThreeLabel"}>
+              <input type={"text"} name={"stepThreeEntity"} value={stepThreeEntity} onChange={this.handleChange}/>
             </label>
             <div className="btns">
               <CtaFormStepBackward currentStep={this.state.currentStep}
                                    handleParentCurrentStep={this.changeCurrentStep}/>
-              {(this.state.stepTwo === "— wybierz —") || (!this.state.stepTwo) ?
+              {(stepThreeLocalization === "— wybierz —") || (!stepThreeLocalization) || (stepThreeHelpGroups.length === 0) ?
                 <div className={"forward"}>Wybierz jedną z opcji!</div> :
                 <CtaFormStepForward currentStep={this.state.currentStep}
                                     handleParentCurrentStep={this.changeCurrentStep}/>}

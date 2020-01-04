@@ -14,9 +14,7 @@ class Form extends Component {
     super(props);
     this.state = {
       topPosition: true,
-      currentStep: 1,
-      chosenStepOne: "",
-      chosenStepTwo: ""
+      currentStep: 1
     }
   }
 
@@ -51,6 +49,11 @@ class Form extends Component {
         case 3:
           this.setState({
             chosenStepTwo: chosenStep
+          });
+          break;
+        case 4:
+          this.setState({
+            chosenStepThree: chosenStep
           });
           break;
         default:
