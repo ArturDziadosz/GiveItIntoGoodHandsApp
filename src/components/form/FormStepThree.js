@@ -98,7 +98,7 @@ class FormStepThree extends Component {
               <CtaFormStepBackward currentStep={this.state.currentStep}
                                    handleParentCurrentStep={this.changeCurrentStep}/>
               {(stepThreeLocalization === "— wybierz —") || (!stepThreeLocalization) || (stepThreeHelpGroups.length === 0) ?
-                <div className={"forward"}>Wybierz jedną z opcji!</div> :
+                <div className={"forward"}>Wybierz lokalizację oraz cel pomocy!</div> :
                 <CtaFormStepForward currentStep={this.state.currentStep}
                                     handleParentCurrentStep={this.changeCurrentStep}/>}
             </div>

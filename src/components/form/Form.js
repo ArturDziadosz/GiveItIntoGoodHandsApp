@@ -5,6 +5,7 @@ import {FormHeader} from "./FormHeader";
 import {FormStepOne} from "./FormStepOne";
 import {FormStepTwo} from "./FormStepTwo";
 import {FormStepThree} from "./FormStepThree";
+import {FormStepFour} from "./FormStepFour";
 import {HomeContact} from "../home/HomeContact";
 
 import './Form.scss';
@@ -56,6 +57,11 @@ class Form extends Component {
             chosenStepThree: chosenStep
           });
           break;
+        case 5:
+          this.setState({
+            chosenStepFour: chosenStep
+          });
+          break;
         default:
           return false;
       }
@@ -76,7 +82,13 @@ class Form extends Component {
         step = <FormStepThree currentStep={currentStep} handleParentCurrentStep={this.changeCurrentStep}/>;
         break;
       case 4:
-        step = <p>Krok 4/4</p>;
+        step = <FormStepFour currentStep={currentStep} handleParentCurrentStep={this.changeCurrentStep}/>;
+        break;
+      case 5:
+        step = <div>Podsumowanie</div>;
+        break;
+      case 6:
+        step = <div>Podziękowanie</div>;
         break;
       default:
         step = <p>Oopsss! Something goes wrong :(</p>
