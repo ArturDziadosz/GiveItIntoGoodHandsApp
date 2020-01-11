@@ -19,48 +19,85 @@ class FormStepFour extends Component {
       phoneError: "",
       stepFourDate: "",
       stepFourHour: "",
-      stepFourMessage: ""
+      stepFourMessage: "",
+      error: true
     }
   }
 
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
-    })
+      [e.target.name]: e.target.value,
+      error: true
+    }, () => {
+      const {stepFourStreet, stepFourCity, stepFourZipCode, stepFourPhone} = this.state;
+      let error = false;
+
+      this.setState({
+        streetError: "",
+        cityError: "",
+        zipCodeError: "",
+        phoneError: ""
+      });
+
+      if (stepFourStreet.length < 2) {
+        this.setState( {
+          streetError: "Podana nazwa ulicy jest za krótka!"
+        });
+        error = true;
+      }
+
+      if (stepFourCity.length < 2) {
+        this.setState( {
+          cityError: "Podana nazwa miasta jest za krótka!"
+        });
+        error = true;
+      }
+
+      if (!this.validateZipCode(stepFourZipCode)) {
+        this.setState( {
+          zipCodeError: "Kod pocztowy powinien być w formacie __-___"
+        });
+        error = true;
+      }
+
+      if (!this.validatePhoneNumber(stepFourPhone)) {
+        this.setState( {
+          phoneError: "Numer telefonu powinien składać się z 9 cyfr!"
+        });
+        error = true;
+      }
+
+      if (error) {
+        return false;
+      }
+
+      console.log("OK");
+      this.setState({
+        error: false
+      })
+    });
   };
 
-  changeCurrentStep = (newCurrentStep) => {
-    const {stepFourStreet} = this.state;
-    let error = false;
+  validateZipCode = (zipCode) => {
+    const re = /\b\d{2}-\d{3}\b/;
+    return re.test(zipCode);
+  };
 
-    this.setState({
-      streetError: "",
-    });
+  validatePhoneNumber = (phoneNumber) => {
+    const re = /\b\d{9}\b/;
+    return re.test(phoneNumber);
+  };
 
-    if (stepFourStreet.length < 2) {
-      this.setState( {
-      streetError: "Podana nazwa ulicy jest za krótka!"
-      });
-      error = true;
-    }
-
-    if (error) {
-      return false;
-    }
-
-    console.log("OK");
-
+  changeCurrentStep = (newCurrentStep) =>
     this.setState({
       currentStep: newCurrentStep
     }, () => {
       const stepFour = [this.state.stepFourStreet, this.state.stepFourCity, this.state.stepFourZipCode, this.state.stepFourPhone, this.state.stepFourDate, this.state.stepFourHour, this.state.stepFourMessage];
       this.props.handleParentCurrentStep(this.state.currentStep, stepFour);
     });
-  };
 
   render() {
-    const {stepFourStreet, streetError, stepFourCity, stepFourZipCode, stepFourPhone, stepFourDate, stepFourHour, stepFourMessage} = this.state;
-
+    const {stepFourStreet, streetError, stepFourCity, cityError, stepFourZipCode, zipCodeError, stepFourPhone, phoneError, stepFourDate, stepFourHour, stepFourMessage} = this.state;
     return (
       <div className="formStep">
         <section className="container containerForm">
@@ -73,30 +110,36 @@ class FormStepFour extends Component {
                 <label className={"stepFourLabel"}>
                   <span>Ulica</span>
                   <input type={"text"} name={"stepFourStreet"} value={stepFourStreet} onChange={this.handleChange} style={streetError ? {border: ".75px solid red"} : null}/>
-                  {streetError ? <p>{streetError}</p> : null}
                 </label>
+                {streetError ? <p className={"error"}>{streetError}</p> : null}
                 <label className={"stepFourLabel"}>
                   <span>Miasto</span>
-                  <input type={"text"} name={"stepFourCity"} value={stepFourCity} onChange={this.handleChange}/>
+                  <input type={"text"} name={"stepFourCity"} value={stepFourCity} onChange={this.handleChange} style={cityError ? {border: ".75px solid red"} : null}/>
+
                 </label>
+                {cityError ? <p className={"error"}>{cityError}</p> : null}
                 <label className={"stepFourLabel"}>
                   <span>Kod<br/>pocztowy</span>
-                  <input type={"text"} name={"stepFourZipCode"} value={stepFourZipCode} onChange={this.handleChange}/>
+                  <input type={"text"} name={"stepFourZipCode"} value={stepFourZipCode} placeholder={"__-___"} onChange={this.handleChange} style={zipCodeError ? {border: ".75px solid red"} : null}/>
+
                 </label>
+                {zipCodeError ? <p className={"error"}>{zipCodeError}</p> : null}
                 <label className={"stepFourLabel"}>
                   <span>Numer<br/>telefonu</span>
-                  <input type={"number"} name={"stepFourPhone"} value={stepFourPhone} onChange={this.handleChange}/>
+                  <input type={"number"} name={"stepFourPhone"} value={stepFourPhone} onChange={this.handleChange} style={phoneError ? {border: ".75px solid red"} : null}/>
+
                 </label>
+                {phoneError ? <p className={"error"}>{phoneError}</p> : null}
               </div>
               <div className="formBox">
                 <p>Termin odbioru:</p>
                 <label className={"stepFourLabel"}>
                   <span>Data</span>
-                  <input type={"text"} name={"stepFourDate"} value={stepFourDate} onChange={this.handleChange}/>
+                  <input type={"date"} name={"stepFourDate"} value={stepFourDate} onChange={this.handleChange}/>
                 </label>
                 <label className={"stepFourLabel"}>
                   <span>Godzina</span>
-                  <input type={"text"} name={"stepFourHour"} value={stepFourHour} onChange={this.handleChange}/>
+                  <input type={"time"} name={"stepFourHour"} value={stepFourHour} onChange={this.handleChange}/>
                 </label>
                 <label className={"stepFourLabel"}>
                   <span>Uwagi<br/>dla kuriera</span>
@@ -107,8 +150,8 @@ class FormStepFour extends Component {
             <div className="btns">
               <CtaFormStepBackward currentStep={this.state.currentStep}
                                    handleParentCurrentStep={this.changeCurrentStep}/>
-              {(!stepFourStreet) || (!stepFourCity) || (!stepFourZipCode) || (!stepFourPhone) || (!stepFourDate) || (!stepFourHour) ?
-                <div className={"forward"}>Wpisz adres oraz termin odbioru!</div> :
+              {(!stepFourStreet) || (!stepFourCity) || (!stepFourZipCode) || (!stepFourPhone) || (!stepFourDate) || (!stepFourHour) || (this.state.error) ?
+                <div className={"forward"}>Wpisz poprawny adres oraz termin odbioru!</div> :
                 <CtaFormStepForward currentStep={this.state.currentStep}
                                     handleParentCurrentStep={this.changeCurrentStep}/>}
             </div>
