@@ -6,6 +6,7 @@ import {FormStepOne} from "./FormStepOne";
 import {FormStepTwo} from "./FormStepTwo";
 import {FormStepThree} from "./FormStepThree";
 import {FormStepFour} from "./FormStepFour";
+import {FormSummary} from "./FormSummary";
 import {HomeContact} from "../home/HomeContact";
 
 import './Form.scss';
@@ -69,7 +70,7 @@ class Form extends Component {
   };
 
   render() {
-    const {topPosition, currentStep} = this.state;
+    const {topPosition, currentStep, chosenStepOne, chosenStepTwo} = this.state;
     let step = null;
     switch (currentStep) {
       case 1:
@@ -85,7 +86,7 @@ class Form extends Component {
         step = <FormStepFour currentStep={currentStep} handleParentCurrentStep={this.changeCurrentStep}/>;
         break;
       case 5:
-        step = <div>Podsumowanie</div>;
+        step = <FormSummary chosenStepOne={chosenStepOne} chosenStepTwo={chosenStepTwo} currentStep={currentStep} handleParentCurrentStep={this.changeCurrentStep}/>;
         break;
       case 6:
         step = <div>Podziękowanie</div>;

@@ -219,6 +219,14 @@
           }
         }
 
+        .error {
+          color: red;
+          padding: 0 10px;
+          font-size: 1.8em;
+          text-align: right;
+          margin: 0 0 20px 0;
+        }
+
       }
     }
 
@@ -244,6 +252,41 @@
       padding: 23px 52px;
       margin: 118px 50px 0 0;
       @include hoverBtn;
+    }
+  }
+
+  .rowSummary {
+    padding-top: 70px;
+
+    .formContainer {
+      .summaryBox {
+        flex: 0 0 100%;
+        .summaryBags {
+          justify-content: flex-start;
+
+          .summaryFirstImg {
+            width: 50px;
+            height: 50px;
+            background-image: url("../../assets/Icon-1.svg");
+            background-size: cover;
+            margin-right: 20px;
+            flex-shrink: 0;
+          }
+
+          .summarySecondImg {
+            width: 50px;
+            height: 50px;
+            background-image: url("../../assets/Icon-4.svg");
+            background-size: cover;
+            margin-right: 20px;
+            flex-shrink: 0;
+          }
+
+          span {
+            font-weight: normal;
+          }
+        }
+      }
     }
   }
 }

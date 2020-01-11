@@ -32,15 +32,19 @@ class FormHeader extends Component {
           <p>Podaj adres oraz termin odbioru rzeczy.</p>
         </>;
         break;
+      case 5:
+        message = null;
+        break;
       default:
         message = <h3>Oopsss! Something goes wrong :(</h3>
     }
     return (
       <div className={"formHeader"}>
         <section className="container containerForm">
+          {(message) ?
           <div className="row rowForm">
             {message}
-          </div>
+          </div> : null}
         </section>
       </div>
     );
