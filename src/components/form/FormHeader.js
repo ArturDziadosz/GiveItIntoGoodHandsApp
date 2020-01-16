@@ -35,6 +35,9 @@ class FormHeader extends Component {
       case 5:
         message = null;
         break;
+      case 6:
+        message = null;
+        break;
       default:
         message = <h3>Oopsss! Something goes wrong :(</h3>
     }

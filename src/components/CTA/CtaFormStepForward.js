@@ -19,7 +19,7 @@ class CtaFormStepForward extends  Component {
   render() {
     return (
       <div className={"forward"} onClick={this.handleForward}>
-        Dalej
+        {this.state.currentStep === 5 ? "Potwierdzam" : "Dalej"}
       </div>
     );
   }

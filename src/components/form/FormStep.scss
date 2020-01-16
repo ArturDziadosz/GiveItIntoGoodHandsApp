@@ -20,11 +20,24 @@
       margin-bottom: 70px;
     }
 
+    h2 {
+      font-size: 4em;
+      line-height: 1.375em;
+      font-weight: 300;
+      margin: 300px 0 0 294px;
+      text-align: center;
+    }
+
     h3 {
       font-size: 3.6em;
       line-height: 1.25em;
       font-weight: 600;
       margin-bottom: 40px;
+    }
+
+    .decoration {
+      @include decoration;
+      margin: 25px 0 330px 482px;
     }
 
     .stepOneLabel {
@@ -288,5 +301,9 @@
         }
       }
     }
+  }
+
+  .rowThanks {
+
   }
 }
