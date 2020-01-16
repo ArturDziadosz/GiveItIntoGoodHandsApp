@@ -26,17 +26,20 @@ class FormStepFour extends Component {
 
   handleChange = e => {
     this.setState({
+      [e.target.name]: e.target.value
+    })
+  };
+
+  handleChangeStreet = e => {
+    this.setState({
       [e.target.name]: e.target.value,
       error: true
     }, () => {
-      const {stepFourStreet, stepFourCity, stepFourZipCode, stepFourPhone} = this.state;
+      const {stepFourStreet} = this.state;
       let error = false;
 
       this.setState({
-        streetError: "",
-        cityError: "",
-        zipCodeError: "",
-        phoneError: ""
+        streetError: ""
       });
 
       if (stepFourStreet.length < 2) {
@@ -46,6 +49,28 @@ class FormStepFour extends Component {
         error = true;
       }
 
+      if (error) {
+        return false;
+      }
+
+      this.setState({
+        error: false
+      })
+    });
+  };
+
+  handleChangeCity = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+      error: true
+    }, () => {
+      const {stepFourCity} = this.state;
+      let error = false;
+
+      this.setState({
+        cityError: ""
+      });
+
       if (stepFourCity.length < 2) {
         this.setState( {
           cityError: "Podana nazwa miasta jest za krótka!"
@@ -53,12 +78,56 @@ class FormStepFour extends Component {
         error = true;
       }
 
+      if (error) {
+        return false;
+      }
+
+      this.setState({
+        error: false
+      })
+    });
+  };
+
+  handleChangeZipCode = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+      error: true
+    }, () => {
+      const {stepFourZipCode} = this.state;
+      let error = false;
+
+      this.setState({
+        zipCodeError: ""
+      });
+
       if (!this.validateZipCode(stepFourZipCode)) {
         this.setState( {
           zipCodeError: "Kod pocztowy powinien być w formacie __-___"
         });
         error = true;
       }
+
+      if (error) {
+        return false;
+      }
+
+      this.setState({
+        error: false
+      })
+    });
+  };
+
+  handleChangePhone = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+      error: true
+    }, () => {
+      const {stepFourPhone} = this.state;
+      let error = false;
+
+      this.setState({
+        phoneError: ""
+      });
 
       if (!this.validatePhoneNumber(stepFourPhone)) {
         this.setState( {
@@ -71,7 +140,6 @@ class FormStepFour extends Component {
         return false;
       }
 
-      console.log("OK");
       this.setState({
         error: false
       })
@@ -109,24 +177,24 @@ class FormStepFour extends Component {
                 <p>Adres odbioru:</p>
                 <label className={"stepFourLabel"}>
                   <span>Ulica</span>
-                  <input type={"text"} name={"stepFourStreet"} value={stepFourStreet} onChange={this.handleChange} style={streetError ? {border: ".75px solid red"} : null}/>
+                  <input type={"text"} name={"stepFourStreet"} value={stepFourStreet} onChange={this.handleChangeStreet} style={streetError ? {border: ".75px solid red"} : null}/>
                 </label>
                 {streetError ? <p className={"error"}>{streetError}</p> : null}
                 <label className={"stepFourLabel"}>
                   <span>Miasto</span>
-                  <input type={"text"} name={"stepFourCity"} value={stepFourCity} onChange={this.handleChange} style={cityError ? {border: ".75px solid red"} : null}/>
+                  <input type={"text"} name={"stepFourCity"} value={stepFourCity} onChange={this.handleChangeCity} style={cityError ? {border: ".75px solid red"} : null}/>
 
                 </label>
                 {cityError ? <p className={"error"}>{cityError}</p> : null}
                 <label className={"stepFourLabel"}>
                   <span>Kod<br/>pocztowy</span>
-                  <input type={"text"} name={"stepFourZipCode"} value={stepFourZipCode} placeholder={"__-___"} onChange={this.handleChange} style={zipCodeError ? {border: ".75px solid red"} : null}/>
+                  <input type={"text"} name={"stepFourZipCode"} value={stepFourZipCode} placeholder={"__-___"} onChange={this.handleChangeZipCode} style={zipCodeError ? {border: ".75px solid red"} : null}/>
 
                 </label>
                 {zipCodeError ? <p className={"error"}>{zipCodeError}</p> : null}
                 <label className={"stepFourLabel"}>
                   <span>Numer<br/>telefonu</span>
-                  <input type={"number"} name={"stepFourPhone"} value={stepFourPhone} onChange={this.handleChange} style={phoneError ? {border: ".75px solid red"} : null}/>
+                  <input type={"number"} name={"stepFourPhone"} value={stepFourPhone} onChange={this.handleChangePhone} style={phoneError ? {border: ".75px solid red"} : null}/>
 
                 </label>
                 {phoneError ? <p className={"error"}>{phoneError}</p> : null}
