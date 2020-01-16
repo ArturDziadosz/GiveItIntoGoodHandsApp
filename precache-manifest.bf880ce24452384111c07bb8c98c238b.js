@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ffdc6b4e7605ab8dd6d413e995538401",
+    "revision": "743ea97d22084ea844a66e4170c86569",
     "url": "/GiveItIntoGoodHandsApp/index.html"
   },
   {
-    "revision": "deef012c9fda30bb7355",
-    "url": "/GiveItIntoGoodHandsApp/static/css/main.068ed551.chunk.css"
+    "revision": "2b885750219e37fb8841",
+    "url": "/GiveItIntoGoodHandsApp/static/css/main.367bcd2a.chunk.css"
   },
   {
-    "revision": "c25c40f597dca003296f",
-    "url": "/GiveItIntoGoodHandsApp/static/js/2.f9129d48.chunk.js"
+    "revision": "149e8fd5d355e8b9bd0e",
+    "url": "/GiveItIntoGoodHandsApp/static/js/2.967ce936.chunk.js"
   },
   {
     "revision": "e928fe768baa9832b5bc57eae021f30c",
-    "url": "/GiveItIntoGoodHandsApp/static/js/2.f9129d48.chunk.js.LICENSE"
+    "url": "/GiveItIntoGoodHandsApp/static/js/2.967ce936.chunk.js.LICENSE"
   },
   {
-    "revision": "deef012c9fda30bb7355",
-    "url": "/GiveItIntoGoodHandsApp/static/js/main.e8d47b5c.chunk.js"
+    "revision": "2b885750219e37fb8841",
+    "url": "/GiveItIntoGoodHandsApp/static/js/main.fb2fc06f.chunk.js"
   },
   {
     "revision": "2a3168e2e9c5c63ac43e",

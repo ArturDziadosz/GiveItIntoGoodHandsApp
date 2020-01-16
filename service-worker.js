@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/GiveItIntoGoodHandsApp/precache-manifest.ed313df00e51983084d1059f9f05b3fe.js"
+  "/GiveItIntoGoodHandsApp/precache-manifest.bf880ce24452384111c07bb8c98c238b.js"
 );
 
 self.addEventListener('message', (event) => {
